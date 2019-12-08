@@ -40,6 +40,7 @@ module.exports = {
     'import/no-unresolved': 2,
     "react/jsx-indent": [0, 4],
     "react/jsx-indent-props": ["error", 4],
+    "import/no-dynamic-require": 0
   }
 };
 
