@@ -1,5 +1,8 @@
+import logger from './logger';
+
 const express = require('express');
-const PORT = 3000
+
+const PORT = 3000;
 
 export default class WebServer {
     constructor() {
@@ -10,27 +13,27 @@ export default class WebServer {
     start() {
         return new Promise((resolve, reject) => {
             try {
-                this.server = this.app.listen(PORT, function () {
-                    console.log(`running on port ${PORT}`);
+                this.server = this.app.listen(PORT, () => {
+                    logger.info('running on port PORT');
                     resolve();
-                })
+                });
             } catch (e) {
-                console.error(e);
-                reject(e)
+                logger.error(e);
+                reject(e);
             }
-        })
+        });
     }
 
     stop() {
         return new Promise((resolve, reject) => {
             try {
                 this.server.close(() => {
-                    resolve(); 
-                })
+                    resolve();
+                });
             } catch (e) {
-                console.error(e.message);
-                reject(e)
+                logger.error(e.message);
+                reject(e);
             }
-        })
+        });
     }
 }

@@ -1,20 +1,19 @@
 import WebServer from './web.server';
 
-describe('Server Started', () => {  
+describe('Server Started', () => {
     let webServer = null;
 
     beforeAll(() => {
-        webServer = new WebServer();  
-    })
+        webServer = new WebServer();
+    });
 
     test('should start and trigger a callback', async () => {
-        let promise = webServer.start();    
-        await expect(promise).resolves.toBeUndefined();  
-    })
+        const promise = webServer.start();
+        await expect(promise).resolves.toBeUndefined();
+    });
 
     test('should stop and trigger a callback', async () => {
-        let promise = webServer.stop();    
-        await expect(promise).resolves.toBeUndefined();  
-    })
-
+        const promise = webServer.stop();
+        await expect(promise).resolves.toBeUndefined();
+    });
 });
