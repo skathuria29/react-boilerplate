@@ -8,7 +8,8 @@
     "build-babel-server": "babel src/server --out-dir ./dist",
     "build-babel-client": "babel src/client --copy-files --out-dir ./dist/public",
     "start": "yarn build-babel && node ./dist/index.js --watch",
-    "test": "jest ./src"
+    "test": "jest ./src",
+    "lint": "eslint src"
   },
   "keywords": [
     "node",
@@ -24,7 +25,8 @@
     "react-dom": "^16.8.6",
     "webpack": "4.16.5",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -32,7 +34,18 @@
     "@babel/plugin-transform-runtime": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
-    "jest": "^24.8.0"
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^3.6.0",
+    "eslint-import-resolver-webpack": "^0.11.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "jest": "^24.8.0",
+    "prettier": "^1.16.1"
   }
 }
