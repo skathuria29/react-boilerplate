@@ -1,2 +1,5 @@
-node_modules
+# server side builds
 dist
+
+# Dependency directory & Lock file
+node_modules

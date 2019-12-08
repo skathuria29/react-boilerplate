@@ -1,19 +1,20 @@
 const path = require('path');
+
 const moduleObject = {
     rules: [
         {
             test: /\.(js|jsx)$/,
             exclude: [/node_modules/],
             use: {
-                loader: "babel-loader"
+                loader: 'babel-loader'
             }
         }
     ]
-}
+};
 
 const client = {
     entry: {
-        'client': './src/client/index.js'
+        client: './src/client/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/public'),
@@ -25,7 +26,7 @@ const client = {
 
 const server = {
     entry: {
-        'server': './src/server/index.js'
+        server: './src/server/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
