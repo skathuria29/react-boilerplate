@@ -1,7 +1,6 @@
 import logger from './logger';
 import WebServer from './web.server';
 
-
 const webServer = new WebServer();
 webServer.start()
     .then(() => {
