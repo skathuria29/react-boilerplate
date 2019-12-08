@@ -1,8 +1,10 @@
 import logger from './logger';
 
 const express = require('express');
+const path = require('path');
 
-const PORT = 3000;
+const config = require(path.join(path.resolve(), 'config'));
+
 
 export default class WebServer {
     constructor() {
@@ -12,9 +14,11 @@ export default class WebServer {
 
     start() {
         return new Promise((resolve, reject) => {
+            const PORT = config.server.port;
+
             try {
                 this.server = this.app.listen(PORT, () => {
-                    logger.info('running on port PORT');
+                    logger.info(`running on port ${PORT}`);
                     resolve();
                 });
             } catch (e) {
